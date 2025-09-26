@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <head>
   <title>THE.VILLE.ERA - Contact</title>
+  <viewpoint name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
@@ -24,6 +26,24 @@
     <p><a href="#">uche.tve &#127908;</a></p>
     <p><a href="#">the.ville.era.tve &#127908;</a></p>
   </section>
+
+  <h1>Engage With The Nigguhs</h1>
+  <p>We’d luv to hear from ya'll</p>
+
+  <form class="contact-form" id="contactForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" placeholder="Your full name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="Your email address" required>
+
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" rows="5" placeholder="Write your message..." required></textarea>
+
+    <button type="submit">Send Message</button>
+  </form>
+
+  <p id="successMessage" class="success-message"> Your message has been sent successfully!</p>
 
   <footer>
     <p>&#127925; TVE GANG.</p>
