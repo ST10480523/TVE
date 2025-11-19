@@ -1,52 +1,169 @@
 <!DOCTYPE html>
+<html>
 <head>
-  <title>THE.VILLE.ERA - Contact</title>
-  <viewpoint name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <script src="js/myScript.js"></script>
+    <title>Engage With The.Ville.Era</title>
+
+    <!-- SEO -->
+    <meta name="description" content="Engage With The.Ville.Era. Send us inquiries, bookings, collaboration requests or fan messages.">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #111;
+            color: #fff;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: #1b1b1b;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(255,255,255,0.05);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin: 15px 0 5px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 14px;
+            border-radius: 8px;
+            border: none;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        input:focus, textarea:focus {
+            outline: 2px solid #f39c12;
+        }
+
+        textarea {
+            height: 150px;
+            resize: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            background: #f39c12;
+            border: none;
+            color: #111;
+            font-weight: bold;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #ffbb33;
+        }
+
+        .status {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            display: none;
+        }
+
+        .success {
+            background: #2ecc71;
+            color: #111;
+        }
+
+        .error {
+            background: #e74c3c;
+            color: #fff;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>&#127911; THE.VILLE.ERA &#127911;</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="music.html">Music</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
 
-  <section>
-    <h2>Contact Us</h2>
+<div class="container">
+    <h1>Engage With The.Ville.Era</h1>
 
-    <img src="TVE Images/tve.jpg" width="200" height="130">
-    <p>Email: <a href="www.sibiyazamo@gmail.com">sibiyazamo@gmail.com</a></p>
-    <p>Please DO THE MOST on our social media!</p>
-    <p><a href="#">samurai.tve &#127908;</a></p>
-    <p><a href="#">apestheplug.tve &#127908;</a></p>
-    <p><a href="#">uche.tve &#127908;</a></p>
-    <p><a href="#">the.ville.era.tve &#127908;</a></p>
-  </section>
+    <form id="contactForm">
+        <label>Your Name</label>
+        <input type="text" id="name" placeholder="Enter your name" required>
 
-  <h1>Engage With The Nigguhs</h1>
-  <p>We’d luv to hear from ya'll</p>
+        <label>Your Email</label>
+        <input type="email" id="email" placeholder="you@example.com" required>
 
-  <form class="contact-form" id="contactForm">
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" placeholder="Your full name" required>
+        <label>Your Message</label>
+        <textarea id="message" placeholder="Type your message..." required></textarea>
 
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" placeholder="Your email address" required>
+        <button type="submit" id="submitBtn">Send Message</button>
 
-    <label for="message">Message:</label>
-    <textarea id="message" name="message" rows="5" placeholder="Write your message..." required></textarea>
+        <div id="statusBox" class="status"></div>
+    </form>
+</div>
 
-    <button type="submit">Send Message</button>
-  </form>
+<script>
+    const form = document.getElementById("contactForm");
+    const statusBox = document.getElementById("statusBox");
+    const submitBtn = document.getElementById("submitBtn");
 
-  <p id="successMessage" class="success-message"> Your message has been sent successfully!</p>
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const message = document.getElementById("message").value.trim();
 
-  <footer>
-    <p>&#127925; TVE GANG.</p>
-  </footer>
+        // Front-end validation
+        const emailRegex = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+        if (!emailRegex.test(email)) {
+            showError("Please enter a valid email address.");
+            return;
+        }
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Sending...";
+
+        try {
+            const res = await fetch("http://localhost:4000/api/contact", {  
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ name, email, message })
+            });
+
+            const data = await res.json();
+
+            if (data.ok) {
+                showSuccess("Your message has been sent!");
+                form.reset();
+            } else {
+                showError(data.error || "Something went wrong.");
+            }
+
+        } catch (err) {
+            showError("Could not connect to server.");
+        }
+
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Send Message";
+    });
+
+    function showSuccess(msg) {
+        statusBox.className = "status success";
+        statusBox.textContent = msg;
+        statusBox.style.display = "block";
+    }
+
+    function showError(msg) {
+        statusBox.className = "status error";
+        statusBox.textContent = msg;
+        statusBox.style.display = "block";
+    }
+</script>
+
 </body>
 </html>

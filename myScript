@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+function Contact() {
+return (
+<div className="p-10">
+<h2 className="text-3xl font-bold mb-4">Contact Us</h2>
+
+
+<form onSubmit={handleSubmit} className="flex flex-col gap-4 max-w-md">
+<input
+type="text"
+placeholder="Your Name"
+className="p-2 border rounded"
+value={name}
+onChange={(e) => setName(e.target.value)}
+/>
+
+
+<input
+type="email"
+placeholder="Your Email"
+className="p-2 border rounded"
+value={email}
+onChange={(e) => setEmail(e.target.value)}
+/>
+
+
+<textarea
+placeholder="Message"
+className="p-2 border rounded"
+value={message}
+onChange={(e) => setMessage(e.target.value)}
+></textarea>
+
+
+<button className="bg-black text-white px-4 py-2 rounded" type="submit">Send</button>
+</form>
+</div>
+);
+}
