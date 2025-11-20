@@ -1,11 +1,14 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>THE.VILLE.ERA - Home</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="style.css">
+  <title>The.Ville.Era</title>
+  <meta name="description" content="ALL THE WAY FROM THE EAASTSIDE." />
+  <meta name="keywords" content="The Ville Era, music group,albums," />
+  <meta name="author" content="Grx.tve" />
+
   <header>
-    <h1>&#127911; THE.VILLE.ERA &#127911;</h1>
     <nav>
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
@@ -14,14 +17,90 @@
     </nav>
   </header>
 
-  <section>
-    <h2>Welcome &#127911;</h2>
+<section>
     <img src="TVE Images/tve.jpg" width="200" height="130">
-    <p>We welcome you our official website of TVE (The.Ville.Era). Our fans are part of our journey so that they can experience our music and connect with us.</p>
   </section>
 
-  <footer>
-    <p>&#127925; TVE GANG.</p>
-  </footer>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      text-align: center;
+      padding: 40px;
+      background: #blueviolet;
+      margin: 0;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 1s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero-title {
+      font-size: 48px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .hero-text {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 18px;
+      color: #444;
+    }
+
+    .btn {
+      margin-top: 25px;
+      padding: 12px 24px;
+      background: #000;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+    }
+
+    .section {
+      margin-top: 40px;
+    }
+  </style>
+
+  <script>
+    function supportAlert() {
+      alert("Thanks for supporting The Ville Era!");
+    }
+  </script>
+</head>
+<body>
+
+  <div class="fade-in">
+    <h1 class="hero-title">Welcome to The.Ville.Era</h1>
+
+    <p class="hero-text">
+      We welcome you our official website of TVE (The.Ville.Era). Our fans are part of our journey so that they can experience our music and connect with us.</p>.
+    </p>
+
+    <button class="btn" onclick="supportAlert()">
+      Go With The Flow..
+    </button>
+
+    <div class="section fade-in" style="animation-delay: 0.5s;">
+      <h2 style="font-size: 28px; font-weight: 600;">🔥 Latest Release</h2>
+      <p style="color: #666;">STAY TUNED...!</p>
+    </div>
+  </div>
+
 </body>
 </html>

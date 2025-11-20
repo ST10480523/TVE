@@ -1,37 +1,137 @@
 <!DOCTYPE html>
+<html>
 <head>
-  <title>THE.VILLE.ERA - About</title>
   <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>About – The Ville Era</title>
+  <meta name="description" content="ALL THE WAY FROM THE EAAASTSIDE" />
+  <meta name="keywords" content="The.Ville.Era artists" />
+  <meta name="author" content="Grx.tve" />
+
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      padding: 40px;
+      background: #blueviolet;
+      color: #222;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 1s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h1 {
+      font-size: 42px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .content {
+      max-width: 850px;
+      margin: 0 auto;
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    .section-title {
+      font-size: 26px;
+      font-weight: bold;
+      margin-top: 40px;
+      margin-bottom: 10px;
+    }
+
+    .highlight {
+      font-weight: bold;
+      color: #000;
+    }
+
+    /* Responsive buttons */
+    .btn-group {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 35px;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      background: black;
+      color: white;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      font-size: 18px;
+      min-width: 180px;
+      text-align: center;
+      transition: 0.25s ease;
+    }
+
+    .btn:hover {
+      background: #333;
+      transform: scale(1.05);
+    }
+
+    /* Mobile-friendly layout */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 32px;
+      }
+      .content {
+        font-size: 16px;
+      }
+      .btn {
+        width: 100%;
+        font-size: 16px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <header>
-    <h1>&#127911; THE.VILLE.ERA &#127911;</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="music.html">Music</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
 
-  <section>
-<img src="TVE Images/tve.jpg" width="200" height="130">
-    
-    <h2>About Us</h2>
-    <p>The.VILLE.ERA are a 3 piece South Africa Hip Hop band from Johannesburg, South Africa. The band formed in 2016 from a collection of Just Chilled NIGGUHS who met at Johannesburg and who all just couldn't get enough Kendrick, Drake, Travis Scott. Their unique brand of entertainment fuses Battle Raps and Killer Punches with WILD and CRAZY that will make you want to REFLECT.</p>
+  <div class="fade-in">
+    <h1>About The.Ville.Era</h1>
 
-    <h3>&#127911; Nigguh 1 - Homeboy_Uche &#127911;</h3>
-    <p>Real name Uchenna Osuigwe, If there was a heartbeat in our sound, it was his. From producing to rapping to designing the whole vibe.. He laid foundation. Rest in beats, KING. We don't move without him, even when he's not physically here.</p>
+    <div class="content">
+      <p>
+       The.VILLE.ERA are a 3 piece South Africa Hip Hop band from Johannesburg, South Africa. The band formed in 2016 from a collection of Just Chilled NIGGUHS who met at Johannesburg and who all just couldn't get enough Kendrick, Drake, Travis Scott. Their unique brand of entertainment fuses Battle Raps and Killer Punches with WILD and CRAZY that will make you want to REFLECT.
+        <span class="highlight">create music that moves people and represents our journey.</span>
+      </p>
 
-    <h3>&#127911; Nigguh 2 - ApesThePlug &#127911;</h3>
-    <p>The Nkabi of the mic. Formely known as April 444. Known for his flows and that 'don't test me' presence. He said : "Won't catch me slipping, ingane ibukile.' That's not just a bar, that's a warning. He don't rap. He arrives.</p>
+      <h2 class="section-title">🌍 Nigguh 1 - Homeboy_uche</h2>
+      <p>
+        Real name Uchenna Osuigwe, If there was a heartbeat in our sound, it was his. From producing to rapping to designing the whole vibe.. He laid foundation. Rest in beats, KING. We don't move without him, even when he's not physically here.
+      </p>
 
-    <h3>&#127911; Nigguh 3 - 5am &#127911;</h3>
-    <p>The Factor. Sharp with the pen, colder with the visuals. He's the kind to design your poster, rap over it, and then smoke you in a cypher. 5AM don't sleep. His bars move in shadows and shape the whole silhouette of the Ville</p>
-  </section>
+      <h2 class="section-title">🎵Nigguh 2 - 5am</h2>
+      <p>
+        The Factor. Sharp with the pen, colder with the visuals. He's the kind to design your poster, rap over it, and then smoke you in a cypher. 5AM don't sleep. His bars move in shadows and shape the whole silhouette of the Ville
+      </p>
 
-  <footer>
-    <p>&#127925; TVE GANG</p>
-  </footer>
+      <h2 class="section-title">🚀Nigguh 3- ApesThePlug</h2>
+      <p>
+       The Nkabi of the mic. Formely known as April 444. Known for his flows and that 'don't test me' presence. He said : "Won't catch me slipping, ingane ibukile.' That's not just a bar, that's a warning. He don't rap. He arrives.
+        <span class="highlight">This is more than music—it’s a movement.</span>
+      </p>
+
+      <div class="btn-group">
+        <button class="btn" onclick="window.location.href='music.html'">🎧 Listen to Our Music</button>
+        <button class="btn" onclick="window.location.href='contact.html'">📨 Contact Us</button>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>
